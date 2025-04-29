@@ -34,6 +34,6 @@ Team Members:
 Borangazy Bauyrzhan  220103051  16P<br>
 Tleuzhan Ayaulum  220103126  16P<br>
 Turarov Aibek  220103023  16P<br>
-Bimurzayeva Zhanar  220103192  20P<br>
+Bimurzayeva Zhanar  220103193  20P<br>
 Makhmud Ayan   220103103 20P<br>
 
