@@ -5,6 +5,10 @@
 </head>
 <body>
 <h1>Ad</h1><hr>
+<form action="/" method="get">
+    Search by ad title: <input type="text" name="title"><br>
+    <input type="submit" value="Search"/>
+</form>
 <h4>Products from all over Kazakhstan</h4>
 <#list products as product>
     <div>
