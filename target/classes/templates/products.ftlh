@@ -5,11 +5,15 @@
 </head>
 <body>
 <h1>Ad | <a href="/login">Login</a></h1><hr>
+<form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Logout"/>
+</form>
+<h4>Products from all over Kazakhstan</h4>
 <form action="/" method="get">
     Search by ad title: <input type="text" name="title"><br>
     <input type="submit" value="Search"/>
 </form>
-<h4>Products from all over Kazakhstan</h4>
 <#list products as product>
     <div>
         <p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">more details...</a></p>
