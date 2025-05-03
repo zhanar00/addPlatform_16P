@@ -4,7 +4,7 @@
     <title>Ad</title>
 </head>
 <body>
-<h1>Ad</h1><hr>
+<h1>Ad | <a href="/login">Login</a></h1><hr>
 <form action="/" method="get">
     Search by ad title: <input type="text" name="title"><br>
     <input type="submit" value="Search"/>
