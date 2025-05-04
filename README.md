@@ -51,9 +51,9 @@ Currently, the project does not have automated tests. Manual testing is performe
 
 References
 
-Spring Boot documentation
-MySQL JDBC integration
-Avito.ru UI patterns for inspiration
+* Spring Boot documentation
+* MySQL JDBC integration
+* Avito.ru UI patterns for inspiration
 
 
 Team Members:
