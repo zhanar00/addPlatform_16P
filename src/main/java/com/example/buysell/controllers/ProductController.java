@@ -16,9 +16,9 @@ import java.io.IOException;
 import java.security.Principal;
 
 @Controller
-@RequiredArgsConstructor // Automatically generates constructor for final fields
+@RequiredArgsConstructor
 public class ProductController {
-    private final ProductService productService; // Handles business logic for products
+    private final ProductService productService;
 
     @GetMapping("/")
     public String products(@RequestParam(name = "searchWord", required = false) String title, Principal principal, Model model) {

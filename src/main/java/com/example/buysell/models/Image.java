@@ -6,11 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "images")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "images") // Maps to the "images" table in the database
+@Data // Lombok annotation to generate getters, setters, etc.
+@AllArgsConstructor // Generates constructor with all fields
+@NoArgsConstructor // Generates default no-args constructor
 public class Image {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +22,8 @@ public class Image {
     private boolean previewImage;
     @Lob
     private byte[] bytes;
+
+    // Many images can belong to one product
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Product product;
 
