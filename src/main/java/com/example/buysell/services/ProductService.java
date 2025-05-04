@@ -19,23 +19,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductService {
 
-    // Injects the ProductRepository to interact with the database
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
 
-    // Returns a list of products, filtered by title if provided
     public List<Product> listProducts(String title) {
         if (title != null) return productRepository.findByTitle(title);
         return productRepository.findAll();
     }
 
-    // Saves a new product and logs the action
     public void saveProduct(Principal principal, Product product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
         product.setUser(getUserByPrincipal(principal));
         Image image1;
         Image image2;
         Image image3;
-
         if (file1.getSize() != 0) {
             image1 = toImageEntity(file1);
             image1.setPreviewImage(true);
@@ -49,7 +45,6 @@ public class ProductService {
             image3 = toImageEntity(file3);
             product.addImageToProduct(image3);
         }
-
         log.info("Saving new Product. Title: {}; Author email: {}", product.getTitle(), product.getUser().getEmail());
         Product productFromDb = productRepository.save(product);
         productFromDb.setPreviewImageId(productFromDb.getImages().get(0).getId());
@@ -71,12 +66,20 @@ public class ProductService {
         return image;
     }
 
-    // Deletes a product by its ID
-    public void deleteProduct(Long id) {
-        productRepository.deleteById(id);
-    }
+    public void deleteProduct(User user, Long id) {
+        Product product = productRepository.findById(id)
+                .orElse(null);
+        if (product != null) {
+            if (product.getUser().getId().equals(user.getId())) {
+                productRepository.delete(product);
+                log.info("Product with id = {} was deleted", id);
+            } else {
+                log.error("User: {} haven't this product with id = {}", user.getEmail(), id);
+            }
+        } else {
+            log.error("Product with id = {} is not found", id);
+        }    }
 
-    // Retrieves a product by its ID, returns null if not found
     public Product getProductById(Long id) {
         return productRepository.findById(id).orElse(null);
     }

@@ -12,7 +12,7 @@
         <br>
         Email: <b>${user.email}</b>
         <br>
-        Phone number: <b>${user.numberPhone}</b>
+        Phone number: <b>${user.phoneNumber}</b>
         <br>
         <br>
         <#if user.isAdmin()>

@@ -9,7 +9,7 @@
         <br>
         <h2>${user.name}</h2>
         <br>
-        Phone number: <b>${user.numberPhone}</b>
+        Phone number: <b>${user.phoneNumber}</b>
     </div>
     <br>
     <hr>
