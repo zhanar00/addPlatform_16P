@@ -18,6 +18,7 @@ To create a safe and beginner-friendly platform for online commerce.
 
 
 Technology Stack
+
 Frontend: HTML, CSS, JavaScript
 Backend:Java, Spring Boot (Spring MVC, Spring Data JPA, Spring Security)
 Database: MySQL
@@ -33,10 +34,30 @@ npm install
 # 4. Start the application
 npm start
 
+
 Usage Guide
+
+User registration/login
+Create product ads with image, description, and price
+Edit or delete your listings
+Search and browse available products
+Admin panel for managing users and listings
+
+
+Testing 
+
+Currently, the project does not have automated tests. Manual testing is performed through UI and admin panel interactions.
+
+
 References
 
+Spring Boot documentation
+MySQL JDBC integration
+Avito.ru UI patterns for inspiration
+
+
 Team Members:
+
 Borangazy Bauyrzhan  220103051  16P<br>
 Tleuzhan Ayaulum  220103126  16P<br>
 Turarov Aibek  220103023  16P<br>
