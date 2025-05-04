@@ -10,17 +10,11 @@ Many people face difficulties when trying to sell or buy used items online due t
 Objectives
 
 To simplify online buying and selling of used goods.
-
 To allow users to create listings with images, descriptions, and prices.
-
 To provide secure authentication and profile management.
-
 To support smooth communication between buyers and sellers.
-
 To enable admin-level content and user management through an admin panel.
-
 To create a safe and beginner-friendly platform for online commerce.
-
 
 
 Technology Stack
