@@ -1,6 +1,5 @@
 package com.example.buysell.controllers;
 
-
 import com.example.buysell.models.Image;
 import com.example.buysell.repositories.ImageRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,14 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.ByteArrayInputStream;
 
-@RestController
-@RequiredArgsConstructor
+@RestController // Marks this as a REST controller returning JSON or binary data
+@RequiredArgsConstructor // Injects final dependencies via constructor
 public class ImageController {
     private final ImageRepository imageRepository;
 
+    // Handles GET request to fetch image binary data by ID
     @GetMapping("/images/{id}")
     private ResponseEntity<?> getImageById(@PathVariable Long id) {
-        Image image = imageRepository.findById(id).orElse(null);
+        Image image = imageRepository.findById(id).orElse(null); // Retrieves image from DB
+
+        // Returns image bytes in the response with appropriate headers
         return ResponseEntity.ok()
                 .header("fileName", image.getOriginalFileName())
                 .contentType(MediaType.valueOf(image.getContentType()))

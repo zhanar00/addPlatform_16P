@@ -17,16 +17,18 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig {
     private final CustomUserDetailsService userDetailsService;
 
+    // Configures the security filter chain (HTTP request authorization and login settings)
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
+                        // Permits access to specific routes without authentication
                         .requestMatchers("/", "/product/**", "/images/**", "/registration", "/css/**").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().authenticated() // Requires authentication for any other request
                 )
                 .formLogin(form -> form
-                        .loginPage("/login")
-                        .permitAll()
+                        .loginPage("/login") // Custom login page
+                        .permitAll() // Allows access to login page without authentication
                 )
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
@@ -42,6 +44,7 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
+    // Configures the password encoder (BCrypt with strength 8)
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(8);
