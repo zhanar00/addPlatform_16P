@@ -9,19 +9,19 @@ Many people face difficulties when trying to sell or buy used items online due t
 
 Objectives
 
-To simplify online buying and selling of used goods.
-To allow users to create listings with images, descriptions, and prices.
-To provide secure authentication and profile management.
-To support smooth communication between buyers and sellers.
-To enable admin-level content and user management through an admin panel.
-To create a safe and beginner-friendly platform for online commerce.
+* To simplify online buying and selling of used goods.
+* To allow users to create listings with images, descriptions, and prices.
+* To provide secure authentication and profile management.
+* To support smooth communication between buyers and sellers.
+* To enable admin-level content and user management through an admin panel.
+* To create a safe and beginner-friendly platform for online commerce.
 
 
 Technology Stack
 
-Frontend: HTML, CSS, JavaScript
-Backend:Java, Spring Boot (Spring MVC, Spring Data JPA, Spring Security)
-Database: MySQL
+* Frontend: HTML, CSS, JavaScript
+* Backend:Java, Spring Boot (Spring MVC, Spring Data JPA, Spring Security)
+* Database: MySQL
 
 Installation Instructions
 Step-by-step guide to set up the project locally.
@@ -37,11 +37,11 @@ npm start
 
 Usage Guide
 
-User registration/login
-Create product ads with image, description, and price
-Edit or delete your listings
-Search and browse available products
-Admin panel for managing users and listings
+* User registration/login
+* Create product ads with image, description, and price
+* Edit or delete your listings
+* Search and browse available products
+* Admin panel for managing users and listings
 
 
 Testing 
