@@ -20,18 +20,21 @@ public class ProductController {
     private final ProductService productService; // Handles business logic for products
 
     @GetMapping("/")
-    public String products(@RequestParam(name = "title", required = false) String title, Principal principal, Model model) {
+    public String products(@RequestParam(name = "searchWord", required = false) String title, Principal principal, Model model) {
         model.addAttribute("products", productService.listProducts(title)); // Load and add product list to model
         model.addAttribute("user", productService.getUserByPrincipal(principal));
+        model.addAttribute("searchWord", title);
         return "products"; // Render the products view
     }
 
     @GetMapping("/product/{id}")
-    public String productInfo(@PathVariable Long id, Model model) {
+    public String productInfo(@PathVariable Long id, Model model, Principal principal) {
         Product product = productService.getProductById(id);
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
         model.addAttribute("product", product);
         model.addAttribute("images", product.getImages());
-        return "product-info"; // Render product detail view
+        model.addAttribute("authorProduct", product.getUser());
+        return "product-info";
     }
 
     @PostMapping("/product/create")
