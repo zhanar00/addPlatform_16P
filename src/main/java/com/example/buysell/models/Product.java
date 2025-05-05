@@ -20,9 +20,11 @@ public class Product {
     private String description;
     private Integer price;
     private String city;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-            mappedBy = "product")
+
+    @OneToMany(mappedBy = "product" ,cascade = CascadeType.ALL, fetch = FetchType.LAZY,
+              orphanRemoval = true)
     private List<Image> images = new ArrayList<>();
+
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     @JoinColumn
     private User user;

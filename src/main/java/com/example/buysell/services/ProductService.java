@@ -5,6 +5,7 @@ import com.example.buysell.models.Product;
 import com.example.buysell.models.User;
 import com.example.buysell.repositories.ProductRepository;
 import com.example.buysell.repositories.UserRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -66,19 +67,23 @@ public class ProductService {
         return image;
     }
 
+    @Transactional
     public void deleteProduct(User user, Long id) {
         Product product = productRepository.findById(id)
                 .orElse(null);
+        log.info("Logged-in user: {}", user.getEmail());
         if (product != null) {
             if (product.getUser().getId().equals(user.getId())) {
                 productRepository.delete(product);
                 log.info("Product with id = {} was deleted", id);
+                log.info("Product belongs to: {}", product.getUser().getEmail());
             } else {
                 log.error("User: {} haven't this product with id = {}", user.getEmail(), id);
             }
         } else {
             log.error("Product with id = {} is not found", id);
-        }    }
+        }
+    }
 
     public Product getProductById(Long id) {
         return productRepository.findById(id).orElse(null);

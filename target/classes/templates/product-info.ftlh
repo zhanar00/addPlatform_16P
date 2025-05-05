@@ -37,7 +37,7 @@
         </a>
     </div>
     <hr>
-    <p><h1 style="text-align: center">${product.title} | ${product.price} ₽</h1></p>
+    <p><h1 style="text-align: center">${product.title} | ${product.price} Тг</h1></p>
     <p style="text-align: center">${product.description}</p>
     <p style="text-align: center">Author's phone number: <b>${authorProduct.phoneNumber}</b></p>
 
