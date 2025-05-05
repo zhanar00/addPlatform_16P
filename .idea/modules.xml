@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Buysell-init-app/Buysell-init-app/buysell.iml" filepath="$PROJECT_DIR$/Buysell-init-app/Buysell-init-app/buysell.iml" />
+      <module fileurl="file://$PROJECT_DIR$/buysell.iml" filepath="$PROJECT_DIR$/buysell.iml" />
     </modules>
   </component>
 </project>
